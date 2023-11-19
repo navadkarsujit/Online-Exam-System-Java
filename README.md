@@ -29,14 +29,12 @@ This project presents a full-stack online exam platform featuring an admin porta
 <kbd>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <p float="left">
-
     <img src="https://github.com/navadkarsujit/Online-Exam-System-Java/assets/144350681/33400500-a0f3-4904-a5b9-760ee2287ad3" width="49%"/> 
     <img src="https://github.com/navadkarsujit/Online-Exam-System-Java/assets/144350681/d7d00517-09fe-49a0-b9ab-477455c92899" width="49%" />
   </p>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <p float="left">
-
-    <img src="https://github.com/navadkarsujit/Online-Exam-System-Java/assets/144350681/ba1118aa-12d8-47ca-9da3-2196e930aefa" width="49%"/> 
+  <img src="https://github.com/navadkarsujit/Online-Exam-System-Java/assets/144350681/ba1118aa-12d8-47ca-9da3-2196e930aefa" width="49%"/> 
    <img src="https://github.com/navadkarsujit/Online-Exam-System-Java/assets/144350681/1bdcbb36-c9c3-472c-ab50-aad14ca0492d" width="49%"/> 
   </p>
 
@@ -46,7 +44,6 @@ This project presents a full-stack online exam platform featuring an admin porta
 <kbd>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <p float="left">
-
     <img src="https://github.com/navadkarsujit/Online-Exam-System-Java/assets/144350681/d4f620e6-557b-480f-99f7-015f299168ca" width="49%" />
     <img src="https://github.com/navadkarsujit/Online-Exam-System-Java/assets/144350681/b3be7719-7c64-4a0c-8ebd-48d8bcbc2e1d" width="49%"/> 
     
@@ -54,7 +51,6 @@ This project presents a full-stack online exam platform featuring an admin porta
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <p float="left">
- 
     <img src="https://github.com/navadkarsujit/Online-Exam-System-Java/assets/144350681/d517395d-8691-4e1a-b61e-334bc8a35e17" width="49%" />
  </p>
 </kbd>
