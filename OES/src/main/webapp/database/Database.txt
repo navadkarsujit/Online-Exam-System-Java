@@ -1,0 +1,141 @@
+Hibernate: 
+    
+    create table AnswerTable (
+       ansid varchar(255) not null,
+        exId varchar(255) not null,
+        mark varchar(255) not null,
+        opt varchar(255) not null,
+        questionid varchar(255) not null,
+        sid varchar(255) not null,
+        primary key (ansid)
+    ) engine=InnoDB
+Hibernate: 
+    
+    create table batchtable (
+       batchid varchar(255) not null,
+        addedby varchar(255) not null,
+        date date not null,
+        batchname varchar(255) not null,
+        primary key (batchid)
+    ) engine=InnoDB
+Hibernate: 
+    
+    create table enrollTable (
+       enrollid varchar(255) not null,
+        addedby varchar(255) not null,
+        enbatchid varchar(255) not null,
+        enexamid varchar(255) not null,
+        enstatus varchar(255) not null,
+        primary key (enrollid)
+    ) engine=InnoDB
+Hibernate: 
+    
+    create table Examtable (
+       examid varchar(255) not null,
+        addedby varchar(255) not null,
+        examdesc varchar(255),
+        examduration varchar(255) not null,
+        examtitle varchar(255) not null,
+        markright varchar(255) not null,
+        markwrong varchar(255) not null,
+        totalQues varchar(255) not null,
+        primary key (examid)
+    ) engine=InnoDB
+Hibernate: 
+    
+    create table NoticeTable (
+       noticeid varchar(255) not null,
+        addedby varchar(255) not null,
+        description varchar(255),
+        noticetitle varchar(255),
+        primary key (noticeid)
+    ) engine=InnoDB
+Hibernate: 
+    
+    create table Questiontable (
+       quesid varchar(255) not null,
+        addedby varchar(255) not null,
+        ans varchar(255) not null,
+        examid varchar(255) not null,
+        optn1 varchar(255) not null,
+        optn2 varchar(255) not null,
+        optn3 varchar(255),
+        optn4 varchar(255),
+        qdesc varchar(255),
+        ques varchar(255) not null,
+        primary key (quesid)
+    ) engine=InnoDB
+Hibernate: 
+    
+    create table Resulttable (
+       resultid varchar(255) not null,
+        examid varchar(255) not null,
+        exstatus varchar(255),
+        marks varchar(255),
+        studid varchar(255) not null,
+        totalmarks varchar(255),
+        primary key (resultid)
+    ) engine=InnoDB
+Hibernate: 
+    
+    create table Student (
+       studentid varchar(255) not null,
+        firstname varchar(255) not null,
+        lastname varchar(255) not null,
+        middlename varchar(255) not null,
+        phoneno varchar(255) not null,
+        rollno varchar(255) not null,
+        studentaddedby varchar(255) not null,
+        studentaddedon date not null,
+        studentaddress varchar(255) not null,
+        studentbatch varchar(255) not null,
+        studentdob date not null,
+        studentemailid varchar(255) not null,
+        studentgender varchar(255) not null,
+        student_password varchar(255) not null,
+        studentstatus varchar(255) not null,
+        primary key (studentid)
+    ) engine=InnoDB
+Hibernate: 
+    
+    create table usertable (
+       id varchar(255) not null,
+        date date not null,
+        email varchar(255) not null,
+        password varchar(255) not null,
+        phone_no varchar(255) not null,
+        username varchar(255) not null,
+        primary key (id)
+    ) engine=InnoDB
+Hibernate: 
+    
+    alter table Student 
+       drop index UK_96m3ex3rv2gsmnvf1kuye31ew
+Hibernate: 
+    
+    alter table Student 
+       add constraint UK_96m3ex3rv2gsmnvf1kuye31ew unique (phoneno)
+Hibernate: 
+    
+    alter table Student 
+       drop index UK_1mys71v9bmhxdq0k20khnhy4
+Hibernate: 
+    
+    alter table Student 
+       add constraint UK_1mys71v9bmhxdq0k20khnhy4 unique (studentemailid)
+Hibernate: 
+    
+    alter table usertable 
+       drop index UK_bfbkwtv1wcs5wkr6wsue8q98f
+Hibernate: 
+    
+    alter table usertable 
+       add constraint UK_bfbkwtv1wcs5wkr6wsue8q98f unique (email)
+Hibernate: 
+    
+    alter table usertable 
+       drop index UK_o3h0dqxvb8ue6tprjr2iycupo
+Hibernate: 
+    
+    alter table usertable 
+       add constraint UK_o3h0dqxvb8ue6tprjr2iycupo unique (phone_no)

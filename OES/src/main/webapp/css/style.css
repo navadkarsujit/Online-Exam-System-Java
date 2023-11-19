@@ -1,0 +1,1152 @@
+:root {
+	--clr-white: #fbfafa;
+	--clr-white2: #b5b5b5;
+	--clr-blue-1: #254569;
+	--clr-text: #66a7cc;
+	--clr-extra: #a4c7da;
+	--clr-back: #7b8c9d;
+	--clr-green-100: #54ad75;
+	--clr-danger-100: #f44336;
+	--ff-base: "Montserrat", sans-serif;
+	--fs-small: 16px;
+	--fs-regular: 18px;
+	--fs-medium: 24px;
+	--fs-large: 30px;
+	--fs-Extra-large: 40px;
+	--fs-Extra-large1: 6rem;
+	--fw-600: 600;
+	--fw-500: 500;
+	--fw-700: 700;
+}
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+a, p, i, input, label, span, button {
+	color: var(--clr-blue-1);
+	font-family: var(--ff-base);
+}
+
+i, button {
+	cursor: pointer;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	cursor: pointer;
+}
+
+.flex-div {
+	display: flex;
+	align-items: center;
+}
+
+.flex-div-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-div-end {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+/* ---------------------------dashboard------------------------------------ */
+.dashboard {
+	margin-top: 15px;
+	flex-wrap: wrap;
+}
+
+.dashboard .card {
+	margin: 1%;
+	height: auto;
+	width: 31%;
+}
+
+.dashboard .card:first-child {
+	background: #2255cc;
+}
+
+.dashboard .card:nth-child(2) {
+	background: #9122CC;
+}
+
+.dashboard .card:nth-child(3) {
+	background: #00cd52;
+}
+
+.dashboard .card:nth-child(4) {
+	background: #1C574F;
+}
+
+.dashboard .card:nth-child(5) {
+	background: var(--clr-danger-100);
+}
+
+.dashboard .card:nth-child(6) {
+	background: #28484F;
+}
+
+.dashboard .card-1 span:first-child {
+	font-size: var(--fs-Extra-large1);
+	color: var(--clr-white);
+}
+
+.dashboard .card-2 span {
+	color: var(--clr-white);
+	font-size: var(--fs-regular);
+	font-weight: var(--fw-500);
+}
+
+.dashboard .card-2 span:last-child {
+	font-size: var(--fs-Extra-large);
+}
+
+.dashboard .card-1 span:last-child {
+	color: var(--clr-white);
+	font-size: var(--fs-regular);
+	font-weight: var(--fw-500);
+}
+
+.dashboard .card-1, .card-2 {
+	padding: 1rem;
+}
+
+.dashboard .card-1 {
+	width: 40%;
+}
+
+.dashboard .card-3 {
+	background: var(--clr-white);
+	margin: 0.07rem;
+	justify-content: space-between;
+	padding: 0.25rem 1rem;
+	color: var(--clr-blue-1);
+	font-size: var(--fs-regular);
+	font-weight: var(--fw-500);
+	cursor: pointer;
+}
+
+.card-3 span:last-child {
+	border-radius: 50%;
+	padding: 2px;
+	color: white;
+}
+
+.dashboard .card:first-child .card-3 span:last-child {
+	background: #2255cc;
+}
+
+.dashboard .card:nth-child(2) .card-3 span:last-child {
+	background: #9122CC;
+}
+
+.dashboard .card:nth-child(3) .card-3 span:last-child {
+	background: #00cd52;
+}
+
+.dashboard .card:nth-child(4) .card-3 span:last-child {
+	background: #1C574F;
+}
+
+.dashboard .card:nth-child(5) .card-3 span:last-child {
+	background: var(--clr-danger-100);
+}
+
+.dashboard .card:nth-child(6) .card-3 span:last-child {
+	background: #28484F;
+}
+
+/* ------------------------------edit profilr user----------------------------------- */
+.UserProfile {
+	/* border-radius: 5px;
+    background-color: #f2f2f2;
+    overflow: auto;
+    width: 50%;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+	display: none;
+	padding: 1rem;
+	width: 40%;
+	background: #FFF;
+	z-index: 20;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	border-radius: 0.1rem;
+}
+
+.UserProfile span {
+	font-size: var(--fs-large);
+	font-weight: var(--fw-600);
+	margin: 10px 0;
+}
+
+.UserProfile input[type=text], .UserProfile input[type=email],
+	.UserProfile input[type=password], .UserProfile select, .UserProfile textarea
+	{
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.UserProfile label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+	width: 100%;
+}
+
+.UserProfile input[type=submit] {
+	background-color: var(--clr-blue-1);
+	font-size: var(--fs-regular);
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.UserProfile input[type=button] {
+	background-color: var(--clr-danger-100);
+	font-size: var(--fs-regular);
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+}
+/* .UserProfile .row:last-child{
+    justify-content: space-around;
+} */
+.col-25 {
+	float: left;
+	margin-top: 6px;
+	width: 30%;
+}
+
+.row input {
+	margin: 10px 0;
+}
+
+.col-75 {
+	float: left;
+	width: 70%;
+	margin-top: 6px;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+	.col-25, .col-75, .UserProfile input[type=submit] {
+		width: 100%;
+		margin-top: 0;
+	}
+	.col-33 input {
+		min-width: 100%;
+	}
+}
+
+/* ----------------------------------------student list-------------------------------- */
+.student-cont {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.student-cont div {
+	margin-right: 15px;
+	background: var(--clr-blue-1);
+	border: solid 1px var(--clr-blue-1);
+	padding: 5px;
+	cursor: pointer;
+}
+
+.student-cont span {
+	color: var(--clr-white);
+	font-size: var(--fs-regular);
+	font-weight: var(--fw-bold);
+}
+.student-cont i{
+	color: var(--clr-white);
+}
+.student-containt {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.student-containt div:first-child i {
+	margin-right: 0.5rem;
+}
+
+.student-containt div i {
+	margin-right: 1rem;
+	font-size: 1.5rem;
+}
+
+.student-containt span {
+	color: var(--clr-blue-1); 
+	font-size: 1.5rem;
+	font-weight: var(--fw-bold);
+}
+
+.batch-dropdown {
+	border: none;
+	background: var(--clr-blue-1);
+	color: var(--clr-extra);
+	font-size: var(--fs-small);
+	font-weight: var(--fw-bold);
+	padding: 5px 10px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.batch-dropdown:focus {
+	outline: none;
+}
+/* .batchlist{
+	display:none;
+} */
+.student-containt-list {
+	width: 100%;
+	overflow-x: auto;
+}
+
+.student-containt-list table {
+	overflow-x: auto;
+	white-space: nowrap;
+	border-collapse: collapse;
+	min-width: 100%;
+}
+
+.student-containt-list td, .student-containt-list table th {
+	border: 1px solid black;
+	text-align: center;
+	font-size: var(--fs-small);
+	color: var(--clr-extra);
+}
+
+.student-containt-list table th {
+	background: var(--clr-blue-1);
+	padding: 9px;
+	text-align: center;
+}
+
+.student-containt-list table td {
+	background: var(--clr-white);
+	color: var(--clr-blue-1);
+	padding: 5px 8px;
+}
+
+.student-containt-list table td:first-child {
+	text-align: center;
+}
+
+.student-containt-list span {
+	cursor: pointer;
+}
+
+.student-containt-list table .bthname {
+	text-align: left;
+}
+
+/* ---------------------------------add student form ---------------------------- */
+.addstudent {
+	/*    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, .15) 0px 0px 0px 1px;
+    margin: 1rem 0;
+    background:#ffffff; 
+    padding: 1rem; */
+	display: block;
+	padding: 1rem;
+	width: 60%;
+	background: #ffffff;
+	z-index: 20;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	border-radius: 0.1rem;
+}
+
+.addstudent span {
+	font-size: var(--fs-medium);
+	font-weight: var(--fw-600);
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.addstudent i {
+	float: right;
+}
+
+.addstudent table {
+	width: 100%;
+}
+
+.addstudent table tr td:first-child {
+	width: fit-content;
+	/* padding-right: 10px; */
+}
+
+.addstudent td {
+	padding: 2px;
+}
+
+.addstudent input[type=text], .addstudent input[type=email], .addstudent input[type=password],
+	.addstudent input[type=date], .addstudent select, .addstudent input[type=radio], .addstudent input[type=number], .addstudent input[type=tel]
+	{
+	padding: 0.6rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: var(--fs-small);
+}
+
+.addstudent input[type=text], .addstudent input[type=email], .addstudent input[type=password],
+	.addstudent input[type=date], .addstudent select , .addstudent input[type=number], .addstudent input[type=tel]{
+	width: 100%;
+}
+
+.addstudent label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+	font-weight: var(--fw-600);
+	font-size: var(--fs-regular);
+	width: 100%;
+}
+
+.addstudent .gender label {
+	padding-left: 10px;
+	font-weight: var(--fw-400);
+	font-size: var(--fs-small);
+}
+
+.addstudent td:nth-child(3) label {
+	padding-left: 20%;
+}
+
+.addstudent input[type=submit] {
+	background-color: var(--clr-blue-1);
+	font-size: var(--fs-small);
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	margin-top: 10px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+/* ---------------------------------add Exam form ---------------------------- */
+/* .addexam{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, .15) 0px 0px 0px 1px;
+    margin: 1rem 0;
+    background:#ffffff; 
+    padding: 1rem;
+    width: 65%;
+} */
+.addexam1 {
+	display: none;
+	width: 55%;
+	background: #FFF;
+	margin: 1rem 0;
+	padding: 1rem;
+	z-index: 20;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	border-radius: 0.1rem;
+}
+
+.addexam2 {
+	display: block;
+	width: 55%;
+	background: #FFF;
+	margin: 1rem 0;
+	padding: 1rem;
+	z-index: 20;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	border-radius: 0.1rem;
+}
+.addexam3 {
+	display: none;
+	width: 40%;
+	background: #FFF;
+	margin: 1rem 0;
+	padding: 1rem;
+	z-index: 20;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	border-radius: 0.1rem;
+}
+
+.addexam span {
+	font-size: var(--fs-medium);
+	font-weight: var(--fw-600);
+	margin-bottom: 10px;
+}
+
+.addexam table {
+	width: 100%;
+}
+
+.addexam table tr td:first-child {
+	width: 40%;
+	/* padding-right: 10px; */
+}
+
+.addexam table tr td:last-child {
+	width: 60%;
+	/* padding-right: 10px; */
+}
+
+.addexam td {
+	padding: 2px;
+}
+
+.addexam input[type=text], .addexam select {
+	padding: 0.6rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 100%;
+	font-size: var(--fs-small);
+}
+
+.addexam input[type=date], .addexam input[type=time] {
+	padding: 0.6rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 49%;
+	font-size: var(--fs-small);
+}
+
+.exam-dropdown {
+	border: none;
+	font-size: var(--fs-small);
+	font-weight: var(--fw-bold);
+	padding: 5px 10px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.exam-dropdown:focus {
+	outline: none;
+}
+
+.addexam label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+	font-weight: var(--fw-600);
+	font-size: var(--fs-regular);
+	width: 100%;
+}
+
+.addexam input[type=submit], .addexam input[type=button] {
+	background-color: var(--clr-blue-1);
+	font-size: var(--fs-small);
+	color: white;
+	padding: 10px 70px;
+	border: none;
+	margin-top: 10px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.addexam textarea{
+	resize: none;
+    height: 50px;
+    width: 100%;
+}
+.abcs textarea{
+	resize: none;
+    height: 150px;
+    width: 100%;
+}
+.examlist {
+	width: 100%;
+	overflow-x: auto;
+}
+
+.examlist table {
+	table-layout: auto;
+	white-space: nowrap;
+	border-collapse: collapse;
+	border: 1px solid black;
+	width: 95%;
+}
+
+.examlist td, .examlist th {
+	border: 1px solid black;
+	text-align: left;
+	font-size: var(--fs-small);
+	color: var(--clr-extra);
+}
+
+.examlist table th {
+	background: var(--clr-blue-1);
+	padding: 9px;
+	text-align: center;
+}
+
+.examlist table td {
+	background: var(--clr-white);
+	color: var(--clr-blue-1);
+	padding: 5px 8px;
+}
+
+.examlist span {
+	cursor: pointer;
+}
+
+/* ---------------------------------add question form ---------------------------- */
+.addques {
+	display: block;
+	padding: 10px;
+	width: 40%;
+	background: #FFF;
+	z-index: 20;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+}
+
+.addques span {
+	font-size: var(--fs-medium);
+	font-weight: var(--fw-600);
+	margin-bottom: 10px;
+}
+
+.addques table {
+	width: 100%;
+}
+
+.addques table tr td:first-child {
+	width: 30%;
+	text-align: right;
+	/* padding-right: 10px; */
+}
+
+.addques table tr td:last-child {
+	width: 70%;
+	/* padding-right: 10px; */
+}
+
+.addques td {
+	padding: 2px;
+}
+
+.addques input[type=text], .addques input[type=datetime-local], .addques select
+	{
+	padding: 0.6rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 100%;
+	font-size: var(--fs-small);
+}
+
+.exam-dropdown {
+	border: none;
+	font-size: var(--fs-small);
+	font-weight: var(--fw-bold);
+	padding: 5px 10px;
+	border-radius: 3px;
+	cursor: pointer;
+}
+
+.exam-dropdown:focus {
+	outline: none;
+}
+
+.addques label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+	font-weight: var(--fw-600);
+	font-size: var(--fs-regular);
+	width: 100%;
+}
+
+.addques input[type=submit], .addques input[type=button] {
+	background-color: var(--clr-blue-1);
+	font-size: var(--fs-small);
+	color: white;
+	padding: 10px 60px;
+	border: none;
+	margin-top: 10px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.addques input[type=button] {
+	margin-left: 20px;
+}
+
+/* ------------------------------new batch----------------------------------- */
+.Addbatch {
+	display: none;
+	padding: 1rem;
+	width: 40%;
+	background: #FFF;
+	z-index: 20;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	border-radius: 0.1rem;
+}
+
+.Addbatch span {
+	font-size: var(--fs-large);
+	font-weight: var(--fw-600);
+	margin: 10px 0;
+}
+
+.Addbatch input[type=text], .Addbatch input[type=email], .Addbatch input[type=password],
+	.Addbatch select, .Addbatch textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.Addbatch label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+	width: 100%;
+}
+
+.Addbatch input[type=submit] {
+	background-color: var(--clr-blue-1);
+	font-size: var(--fs-regular);
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.Addbatch input[type=button] {
+	background-color: var(--clr-danger-100);
+	font-size: var(--fs-regular);
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+}
+/* ------------------------------new batch----------------------------------- */
+.editbatch {
+	display: block;
+	padding: 1rem;
+	width: 40%;
+	background: #FFF;
+	z-index: 20;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+	border-radius: 0.1rem;
+}
+
+.editbatch span {
+	font-size: var(--fs-large);
+	font-weight: var(--fw-600);
+	margin: 10px 0;
+}
+
+.editbatch input[type=text], .editbatch input[type=email], .editbatch input[type=password],
+	.editbatch select, .editbatch textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.editbatch label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
+	width: 100%;
+}
+
+.editbatch input[type=submit] {
+	background-color: var(--clr-blue-1);
+	font-size: var(--fs-regular);
+	color: white;
+	padding: 8px 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.editbatch input[type=button] {
+	background-color: var(--clr-danger-100);
+	font-size: var(--fs-regular);
+	color: white;
+	padding: 8px 10px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	float: right;
+}
+
+.divTable {
+	display: table;
+	width: auto;
+	background-color: #eee;
+	border: 1px solid #666666;
+	border-spacing: 5px; /*cellspacing:poor IE support for  this*/
+	/* border-collapse:separate;*/
+}
+
+.divRow {
+	display: table-row;
+	width: auto;
+}
+
+.divCell {
+	float: left; /*fix for  buggy browsers*/
+	display: table-column;
+	width: 200px;
+	background-color: #ccc;
+}
+
+.queslist {
+	width: 100%;
+	overflow: auto; 
+	height:75vh;
+}
+
+.queslist table {
+	width:100%;
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+
+.queslist table td, .queslist table th {
+	border: 1px solid black;
+	text-align: center;
+	font-size: var(--fs-small);
+	color: var(--clr-extra);
+}
+
+.queslist table th {
+	background: var(--clr-blue-1);
+	padding: 9px;
+	text-align: center;	
+	position: sticky;
+	top:0;
+	z-index: 10;
+}
+
+.queslist table td {
+	background: var(--clr-white);
+	color: var(--clr-blue-1);
+	padding: 5px 4px;
+	word-wrap: break-word;
+	
+}
+
+.queslist table td:first-child {
+	text-align: center;
+}
+
+.queslist span {
+	cursor: pointer;
+}
+
+.queslist table .bthname {
+	text-align: left;
+}
+.stud-dashboard {
+	margin-top: 15px;
+	flex-wrap: wrap;
+}
+
+.stud-dashboard .card12 {
+	margin: 1%;
+	height: auto;
+	width: 45%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    border:solid 1px #254569;
+}
+.card1{
+    background: #254569;
+    padding: 10px 0px 10px 20px;
+}   
+.card1 span:first-child{
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    
+}
+.card1 span:last-child{
+    font-size: 18px;
+     color: #ffffff;
+}
+.card2{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px 20px 10px;
+}
+.card2 a{
+    font-size: 18px;
+}
+
+
+
+.exam-section{
+    display: flex;
+    width: 100%;
+    background: #ececec;;
+     height: 92vh;
+    overflow-y: hidden;
+    
+}
+.exam-container{
+    /* margin-left: 30rem;  */
+    width: 73%;
+    padding: 1%;
+     overflow-y: scroll;
+    padding-bottom: 100px;
+}
+.right-container{
+  padding: 1%;
+    width: 27%;
+}
+.newcont{
+    background-color: #ffffff;
+    padding: 5px 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+.ques{
+    font-size: 20px;
+    font-weight: 600;
+    margin:10px;
+}
+.desc{
+    font-size: 18px;
+    margin:10px;
+}
+.Answer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.Answer .A1{
+    margin: 1%;
+	height: auto;
+	width: 45%;
+    font-size: 18px;
+}
+.answer1{
+	padding-bottom:10px;
+}
+.answer1 p{
+    font-size: 18px;
+}
+.answer1 input{
+    font-size: 15px;
+    width: 50%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+.subexam{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.subexam input{
+    background:#254569 ;
+	font-size: 18px;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+
+.right-container .time{
+    padding:0 10px ;
+}
+.right-container .profile{
+    margin-top: 10px;
+    background: #ffffff;
+    padding: 15px 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.right-container .profile1122{
+    
+    background: #ffffff;
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    
+}
+.right-container #videoElement{
+	 
+	width:100%;
+	height:270px;
+	 
+    border:10px #ffff solid;
+}
+
+.right-container .time p{
+    font-size: 26px;
+    padding: 15px 0;
+    font-weight: 600;
+}
+.right-container .time {
+    background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  
+}
+.right-container .profile p{
+    font-size: 18px;
+    margin-bottom:18px;
+}
+
+.instuction {
+    display: block;
+    border-radius: 3px;
+    width: 50%;
+    background: #FFF;
+    
+    z-index: 20;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+
+}
+.instuction1{
+    padding: 20px;
+}
+.insthead{
+    background:#254569;
+    border-radius: 3px;
+    padding: 10px;
+}
+.insthead span{
+    font-size: 24px;
+    font-weight: 600;
+    color:  #ffffff;
+}
+.instuction1 h2{
+    font-weight: 500;
+    color: #254569;
+    margin-bottom:20px;
+}
+.instuction1  p{
+    color: #254569;
+     margin-bottom:10px;
+}
+.start{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.start input{
+    background-color: var(--clr-blue-1);
+    font-size: var(--fs-small);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.inst{
+ background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 0px 1px;
+    color:#254569;
+    padding:10px;
+    margin-bottom:10px;
+}
+.inst p{
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.inst a{
+	color:red;
+}
+
+#radio1 {
+    display: none;
+}

@@ -1,0 +1,302 @@
+<%@page import="com.helper.*"%>
+<%@page import="com.entity.*"%>
+<%@page import="javax.servlet.http.Part"%>
+<%@page import="java.util.List"%>	
+<%
+DatabaseClass DAO = new DatabaseClass();
+String id = (String) session.getAttribute("UserId");
+String eexam = request.getParameter("eexam");
+String eexamid = request.getParameter("eexamid");
+%>
+	 <!-- --------------------------main body ---------------------------------------------->
+	<div class="main-body">
+		<div class="main-containt">
+			<div class="small-containers">
+                <div class="dash-board container-padding">
+                    <div class="flex-div-center">
+                        <span class="material-symbols-outlined">school</span>
+                        <span>Exam</span>
+                    </div>
+                    <a href="">Today is
+                        <span id="day">day</span>,
+                        <span id="daynum">00</span>
+                        <span id="month">month</span>
+                        <span id="year">0000</span>
+                        <span class="display-time"></span>
+                    </a>
+                </div>
+                <hr>
+            </div>
+<!-- ==========================================Profile Edit============================ -->
+       		<jsp:include page="EditUserProfile.jsp" /> 
+<!-- ======================================================================================== -->
+			<div class="small-containers">
+                <div class="student-cont container-padding ">
+                    <div onclick="showexam()">
+                    	<i class="fa fa-add" aria-hidden="true"></i>
+                        <span>Add Exam</span>
+                    </div>
+                </div>
+                <hr>
+            </div>
+<!-- ==========================================Add Exam============================ -->		
+			<div class="addexam1" id="AddExam">
+                <div class="addexam ">
+                    <div>
+                        <span class="stud-head-style flex-div-center">Create ew Exam</span>
+                        <hr>
+                        <br>
+                    </div>
+                    <div class="addstudent1">
+                         <form action="Controller.jsp" method="post" class="signup">
+                          	<input type="hidden" name="page" value="createexam">
+                    		<input type="hidden" name="addedby" value="<%=id%>">
+                            <table>
+                                <tr>
+                                    <td><label>Exam Title</label></td>
+                                    <td>
+                                        <input type="text" placeholder="Exam Title" class="text" name="examtitle" 
+                                            required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Exam DateTime</label></td>
+                                    <td>
+                                        <input type="date" name="examdate"  required>
+                                        <input type="time" name="examtime"  required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Exam Duration</label></td>
+                                    <td>
+                                        <select  name="examduration"  class="exam-dropdown" id="batch" required>
+                                            <option value="---">Select</option>
+                                            <% for(int k=15;k<=250;k+=15){%>
+                                            	<option value="<%=k%>"><%=k%> Minutes</option>
+                                            <%} %>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Total Question</label></td>
+                                    <td>
+                                        <select  name="totalQues" class="exam-dropdown" id="batch">
+                                            <option value="---">Select</option>
+                                             <% for(int i=1;i<=100;i++){%>
+                                            <option value="<%=i%>"><%=i%></option>
+                                            <%} %>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Marks for Right Answer</label></td>
+                                    <td>
+                                        <select  name="markright"  class="exam-dropdown" id="batch" required>
+                                            <option value="---">Select</option>
+                                            <% for(int i=1;i<=10;i++){%>
+                                            <option value="<%=i%>"><%=i%></option>
+                                            <%} %>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Marks for Wrong Answer</label></td>
+                                    <td>
+                                        <select name="markwrong"  class="exam-dropdown" id="batch" required>
+                                            <option value="----">Select</option>
+                                            <% for(int j=0;j>=-10;j--){%>
+                                            <option value="<%=j%>"><%=j%></option>
+                                            <%} %>
+                                        </select>
+                                    </td>
+                                </tr> 
+                                <tr>
+            
+                                    <td colspan="2" style="text-align: center;">
+                                       <br><hr> <input type="submit" value="Save">
+                                       <input onclick="closeshowbatch()" type="button" value="Cancel" style="background: #f44336;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div> 
+<!-- =========================================table==================================== -->
+		  	<div class="small-containers ">
+                <div class="student-containt container-padding ">
+                    <div >
+                    	<i class="fa fa-list" aria-hidden="true"></i>
+                        <span>Exam List</span>
+                    </div>
+                </div>
+                <hr>
+                <div class="student-containt-list container-padding">
+                    <table>
+                        <tr>
+                        	<th>Sr no.</th>
+                            <th>Exam Title</th>
+                            <th>Exam DateTime</th>
+                            <th>Exam Duration</th>
+                            <th>Total Question</th>
+                            <th>Marks for <br> Right Answer</th>
+                            <th>Marks for <br> Wrong Answer</th>
+                            <th>Add <br> Question</th>
+                            <th>Show <br> Question</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        <%  int j=0;
+    						List<Exam> Listexam = DAO.getAllexam(id);
+    						for(Exam exam : Listexam) {	
+						%>
+                        <tr>
+                            <td><%=j+1 %></td>
+                            <td><%=exam.getExamtitle() %></td>
+                            <td><%=exam.getExamdate() %> <%=exam.getExamtime() %></td>
+                            <td><%=exam.getExamduration() %> Minutes</td>
+                            <td><%=exam.getTotalQues() %></td>
+                            <td><%=exam.getMarkright() %></td>
+                            <td><%=exam.getMarkwrong() %></td>
+                            <td style="text-align: center;"><a style="border: black solid 1px; padding: 4px 15px;" href="User-Page.jsp?pg=3&AddQues=1&Qbatchid=<%=exam.getExamid()%>"><i  class="fa fa-add" aria-hidden="true"></i> Add</a> </td>
+                            <td style="text-align: center;"><a style="border: black solid 1px; padding: 4px 15px;" href="User-Page.jsp?pg=3&eexam=1&eexamid=<%=exam.getExamid()%>"><i  class="fa fa-eye" aria-hidden="true"></i> Show</a> </td>
+                            <td>
+                            	<!-- =========edit batch================= -->
+                            	<a href="User-Page.jsp?pg=3&eexam=1&eexamid=<%=exam.getExamid()%>">
+                            		<span class="material-symbols-outlined">edit </span>
+                                </a>
+                            </td>
+                            <td>
+                                <span style="color: red;" class="material-symbols-outlined">
+                                    delete_forever
+                                </span>
+                            </td>
+                        </tr>
+                        <%
+                        j++;
+	                       
+    					}%>
+                        	<tr>
+                        		<td colspan="11"> ----------------------------------------------</td>
+                        	</tr>
+                       
+                    </table>
+                </div>
+                <hr>
+            </div> 
+<!--===========================================Add Questions ====================================================  -->
+		  <%--  <%if(request.getParameter("AddQues")!=null&&request.getParameter("Qbatchid")!=null){ 
+			%> 
+		    	<jsp:include page="AddQues.jsp" />   
+		    	<jsp:include page="Manage-Question.jsp" />  
+		   <%} %> --%>
+<!-- ==========================================Edit Exam==================================================== -->		
+			<%if(request.getParameter("eexam")!=null&&request.getParameter("eexamid")!=null){ 
+			Exam exam1=DAO.getexamDetails(eexamid);
+			%>
+			<div class=" addexam2 " id="editexam">
+                <div class="addexam ">
+                    <div>
+                        <span class="stud-head-style flex-div-center">Create New Exam</span>
+                        <hr>
+                        <br>
+                    </div>
+                    <div class="addstudent1">
+                         <form action="Controller.jsp" method="post" class="signup">
+                          	<input type="hidden" name="page" value="editexam">
+                    		<input type="hidden" name="addedby" value="<%=id%>">
+                    		<input type="hidden" name="examid" value="<%=exam1.getExamid()%>">
+                            <table>
+                                <tr>
+                                    <td><label>Exam Title</label></td>
+                                    <td>
+                                        <input type="text" placeholder="Exam Title" class="text" name="examtitle" value="<%=exam1.getExamtitle() %>"
+                                            required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Exam DateTime</label></td>
+                                    <td>
+                                        <input type="date" name="examdate" value="<%=exam1.getExamdate() %>" required>
+                                        <input type="time" name="examtime" value="<%=exam1.getExamtime() %>" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Exam Duration</label></td>
+                                    <td>
+                                        <select  name="examduration"  class="exam-dropdown" id="batch" required>
+                                            <option value="<%=exam1.getExamduration() %>"><%=exam1.getExamduration() %> Minutes</option>
+                                            <% for(int k=15;k<=250;k+=15){%>
+                                            	<option value="<%=k%>"><%=k%> Minutes</option>
+                                            <%} %>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Total Question</label></td>
+                                    <td>
+                                        <select  name="totalQues" class="exam-dropdown" id="batch">
+                                            <option value="<%=exam1.getTotalQues() %>"><%=exam1.getTotalQues() %></option>
+                                             <% for(int i=1;i<=100;i++){%>
+                                            <option value="<%=i%>"><%=i%></option>
+                                            <%} %>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Marks for Right Answer</label></td>
+                                    <td>
+                                        <select  name="markright"  class="exam-dropdown" id="batch" required>
+                                            <option value="<%=exam1.getMarkright() %>"><%=exam1.getMarkright() %></option>
+                                            <% for(int i=1;i<=10;i++){%>
+                                            <option value="<%=i%>"><%=i%></option>
+                                            <%} %>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label>Marks for Wrong Answer</label></td>
+                                    <td>
+                                        <select name="markwrong"  class="exam-dropdown" id="batch" required>
+                                            <option value="<%=exam1.getMarkwrong() %>"><%=exam1.getMarkwrong() %></option>
+                                            <% for(int o=0;o>=-10;o--){%>
+                                            <option value="<%=o%>"><%=o%></option>
+                                            <%} %>
+                                        </select>
+                                    </td>
+                                </tr> 
+                                <tr>
+            
+                                    <td colspan="2" style="text-align: center;">
+                                       <br><hr> <input type="submit" value="Save">
+                                       <input onclick="editexamclose()" type="button" value="Cancel" style="background: #f44336;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div> 
+            <%} %>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		</div>
+	</div>
